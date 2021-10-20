@@ -23,7 +23,6 @@ public class Main {
                 } else {
                     System.out.println("Неправильная команнда!");
                 }
-
             } catch (Exception e) {
                 System.out.println("Ошибка ввода идентификатора!");
             }
