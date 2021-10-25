@@ -12,14 +12,17 @@ public class Main {
                     list.add(scanner.nextLine());
                 } else if (command.equals("print")) {
                     String id = scanner.next();
-                    if (id.equals("all"))
-                        list.printAll();
-                    else
-                        list.print(Integer.parseInt(id));
+                    list.print(id);
                 } else if (command.equals("toggle")) {
                     list.toggle(Integer.parseInt(scanner.next()));
                 } else if (command.equals("quit")) {
                     break;
+                } else if (command.equals("delete")) {
+                    list.delete(Integer.parseInt(scanner.next()));
+                } else if (command.equals("edit")) {
+                    list.edit(Integer.parseInt(scanner.next()), scanner.nextLine());
+                } else if (command.equals("search")) {
+                    list.search(scanner.nextLine());
                 } else {
                     System.out.println("Неправильная команнда!");
                 }

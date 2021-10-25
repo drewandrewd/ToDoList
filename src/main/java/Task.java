@@ -27,9 +27,9 @@ public class Task {
 
     public String getToggle() {
         if (isDone() == true) {
-            toggle = "[выполнена]";
+            toggle = "[x]";
         } else {
-            toggle = "[не выполнена]";
+            toggle = "[ ]";
         }
         return toggle;
     }

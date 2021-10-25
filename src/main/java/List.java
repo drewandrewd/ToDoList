@@ -17,20 +17,44 @@ public class List {
     }
 
     public void add(String toDo) {
-        getToDoList().add(0, new Task(toDo));
+        getToDoList().add(new Task(toDo));
     }
 
     public void toggle(int id) {
         getToDoList().get(id - 1).setDone(!getToDoList().get(id - 1).isDone());
     }
 
-    public void print(int id) {
-        System.out.println(id + ". " + getToDoList().get(id - 1).getToggle().trim() + " " + getToDoList().get(id - 1).getText());
+    public void print(String id) {
+        int first = 0;
+        int last = 0;
+        if (id.equals("all")) {
+            last = toDoList.size();
+        } else {
+            first = Integer.parseInt(id) - 1;
+            last = first + 1;
+        }
+        for (int i = first; i < last; i++) {
+            System.out.println((i + 1) + ". " + getToDoList().get(i).getToggle() + " " + getToDoList().get(i).getText().trim());
+        }
     }
 
-    public void printAll() {
+    public void delete(int id) {
+        getToDoList().remove(id);
+    }
+
+    public void edit(int id, String toDo) {
+        getToDoList().set(id - 1, new Task(toDo));
+    }
+
+    public void search(String subString) {
+        ArrayList<String> indexes = new ArrayList<>();
         for (int i = 0; i < toDoList.size(); i++) {
-            System.out.println((i + 1) + ". " + getToDoList().get(i).getToggle().trim() + " " + getToDoList().get(i).getText());
+            if (toDoList.get(i).getText().contains(subString)) {
+                indexes.add((i + 1) + "");
+            }
+        }
+        for (String index : indexes) {
+            print(index);
         }
     }
 }
