@@ -1,36 +1,27 @@
-import java.util.ArrayList;
-
 public class List {
 
-    private ArrayList<Task> toDoList;
+    private Task toDoList = new Task("");
 
-    public List(ArrayList<Task> toDoList) {
-        this.toDoList = toDoList;
-    }
-
-    public ArrayList<Task> getToDoList() {
+    public Task getToDoList() {
         return toDoList;
     }
 
-    public void setToDoList(ArrayList<Task> toDoList) {
-        this.toDoList = toDoList;
+    public void add(String text) {
+        getToDoList().setText(text);
     }
 
-    public void add(String toDo) {
-        getToDoList().add(0, new Task(toDo));
+    public void toggle(int id) throws Exception {
+        if (id == 1)
+            toDoList.setDone(!toDoList.isDone());
+        else
+            throw new Exception();
     }
 
-    public void toggle(int id) {
-        getToDoList().get(id - 1).setDone(!getToDoList().get(id - 1).isDone());
-    }
-
-    public void print(int id) {
-        System.out.println(id + ". " + getToDoList().get(id - 1).getToggle().trim() + " " + getToDoList().get(id - 1).getText());
-    }
-
-    public void printAll() {
-        for (int i = 0; i < toDoList.size(); i++) {
-            System.out.println((i + 1) + ". " + getToDoList().get(i).getToggle().trim() + " " + getToDoList().get(i).getText());
+    public void print(String id) {
+        String toggle = "[ ]";
+        if (toDoList.isDone() == true) {
+            toggle = "[x]";
         }
+        System.out.println(1 + ". " + toggle + " " + toDoList.getText().trim());
     }
 }

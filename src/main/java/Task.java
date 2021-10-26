@@ -1,8 +1,7 @@
 public class Task {
 
     private String text;
-    private boolean done;
-    private String toggle;
+    private boolean done = false;
 
     public Task(String text) {
         this.text = text;
@@ -23,14 +22,5 @@ public class Task {
 
     public void setDone(boolean done) {
         this.done = done;
-    }
-
-    public String getToggle() {
-        if (isDone() == true) {
-            toggle = "[выполнена]";
-        } else {
-            toggle = "[не выполнена]";
-        }
-        return toggle;
     }
 }

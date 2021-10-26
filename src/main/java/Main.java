@@ -1,9 +1,8 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        List list = new List(new ArrayList<>());
+        List list = new List();
         Scanner scanner = new Scanner(System.in);
         while (true) {
             try {
@@ -12,10 +11,7 @@ public class Main {
                     list.add(scanner.nextLine());
                 } else if (command.equals("print")) {
                     String id = scanner.next();
-                    if (id.equals("all"))
-                        list.printAll();
-                    else
-                        list.print(Integer.parseInt(id));
+                    list.print(id);
                 } else if (command.equals("toggle")) {
                     list.toggle(Integer.parseInt(scanner.next()));
                 } else if (command.equals("quit")) {
