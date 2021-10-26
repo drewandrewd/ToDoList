@@ -25,12 +25,12 @@ public class List {
     }
 
     public void print(int id) {
-        System.out.println(id + ". " + getToDoList().get(id - 1).getToggle() + " " + getToDoList().get(id - 1).getText());
+        System.out.println(id + ". " + getToDoList().get(id - 1).getToggle().trim() + " " + getToDoList().get(id - 1).getText());
     }
 
     public void printAll() {
         for (int i = 0; i < toDoList.size(); i++) {
-            System.out.println((i + 1) + ". " + getToDoList().get(i).getToggle() + " " + getToDoList().get(i).getText());
+            System.out.println((i + 1) + ". " + getToDoList().get(i).getToggle().trim() + " " + getToDoList().get(i).getText());
         }
     }
 }
