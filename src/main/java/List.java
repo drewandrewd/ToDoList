@@ -17,11 +17,15 @@ public class List {
             throw new Exception();
     }
 
-    public void print(String id) {
-        String toggle = "[ ]";
-        if (toDoList.isDone() == true) {
-            toggle = "[x]";
+    public void print(String id) throws Exception {
+        if (id.equals("1") || id.equals("all")) {
+            String toggle = "[ ]";
+            if (toDoList.isDone() == true) {
+                toggle = "[x]";
+            }
+            System.out.println(1 + ". " + toggle + " " + toDoList.getText().trim());
+        } else {
+            throw new Exception();
         }
-        System.out.println(1 + ". " + toggle + " " + toDoList.getText().trim());
     }
 }
