@@ -1,11 +1,15 @@
 import java.util.ArrayList;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+import java.util.List;
 
-public class List {
+public class Lists {
 
     private ArrayList<Task> toDoList;
 
-    public List(ArrayList<Task> toDoList) {
+    public Lists(ArrayList<Task> toDoList) {
         this.toDoList = toDoList;
+        getToDoList().add(new Task(""));
     }
 
     public ArrayList<Task> getToDoList() {
@@ -21,20 +25,20 @@ public class List {
     }
 
     public void toggle(int id) {
-        getToDoList().get(id - 1).setDone(!getToDoList().get(id - 1).isDone());
+        getToDoList().get(id).setDone(!getToDoList().get(id).isDone());
     }
 
     public void print(String id) {
-        int first = 0;
+        int first = 1;
         int last = 0;
         if (id.equals("all")) {
             last = toDoList.size();
         } else {
-            first = Integer.parseInt(id) - 1;
+            first = Integer.parseInt(id);
             last = first + 1;
         }
         for (int i = first; i < last; i++) {
-            System.out.println((i + 1) + ". " + getToDoList().get(i).getToggle() + " " + getToDoList().get(i).getText().trim());
+            System.out.println((i) + ". " + getToDoList().get(i).getToggle() + " " + getToDoList().get(i).getText().trim());
         }
     }
 
@@ -43,18 +47,13 @@ public class List {
     }
 
     public void edit(int id, String toDo) {
-        getToDoList().set(id - 1, new Task(toDo));
+        getToDoList().set(id, new Task(toDo));
     }
 
     public void search(String subString) {
-        ArrayList<String> indexes = new ArrayList<>();
-        for (int i = 0; i < toDoList.size(); i++) {
-            if (toDoList.get(i).getText().contains(subString)) {
-                indexes.add((i + 1) + "");
-            }
-        }
-        for (String index : indexes) {
-            print(index);
-        }
+        List tmp = toDoList.stream().filter(e -> e.getText().contains(subString)).collect(Collectors.toList());
+        List<Integer> indexes = (List<Integer>) tmp.stream().map(o -> toDoList.indexOf(o)).collect(Collectors.toList());
+        Stream stream = indexes.stream();
+        stream.forEach(e -> print(e + ""));
     }
 }
