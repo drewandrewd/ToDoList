@@ -18,7 +18,7 @@ public class List {
     }
 
     public void print(String id) throws Exception {
-        if (id.equals("1") || id.equals("all")) {
+        if (id.equals("all")) {
             String toggle = "[ ]";
             if (toDoList.isDone() == true) {
                 toggle = "[x]";

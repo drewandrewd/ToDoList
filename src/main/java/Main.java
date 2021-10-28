@@ -9,18 +9,14 @@ public class Main {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         while (true) {
             try {
-                String[] line = reader.readLine().split(" ");
-                String command = line[0];
+                String line = reader.readLine();
+                String command = line.substring(0, line.indexOf(" "));
                 if (command.equals("add")) {
-                    StringBuilder fullText = new StringBuilder();
-                    for (int i = 1; i < line.length; i++) {
-                        fullText.append(" " + line[i]);
-                    }
-                    list.add(fullText.toString());
+                    list.add(line.replace(command, "").trim());
                 } else if (command.equals("print")) {
-                    list.print(line[1]);
+                    list.print(line.replace(command, "").trim());
                 } else if (command.equals("toggle")) {
-                    list.toggle(Integer.parseInt(line[1]));
+                    list.toggle(Integer.parseInt(line.replace(command, "").trim()));
                 } else if (command.equals("quit")) {
                     break;
                 } else {
