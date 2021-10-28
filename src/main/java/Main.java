@@ -9,13 +9,15 @@ public class Main {
         while (true) {
             try {
                 String line = reader.readLine();
-                String command = line.substring(0, line.indexOf(" "));
+                String command = "print";
+                if (!line.equals(command))
+                    command = line.substring(0, line.indexOf(" "));
                 if (command.equals("add")) {
-                    list.add(line.replace(command, "").trim());
+                    list.add(list.findArgument(line, command));
                 } else if (command.equals("print")) {
-                    list.print(line.replace(command, "").trim());
+                    list.print(list.findArgument(line, command));
                 } else if (command.equals("toggle")) {
-                    list.toggle(Integer.parseInt(line.replace(command, "").trim()));
+                    list.toggle(Integer.parseInt(list.findArgument(line, command)));
                 } else if (command.equals("quit")) {
                     break;
                 } else {

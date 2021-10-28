@@ -1,6 +1,7 @@
 public class List {
 
     private Task toDoList = new Task("");
+    private String toggle = "[ ]";
 
     public Task getToDoList() {
         return toDoList;
@@ -11,21 +12,29 @@ public class List {
     }
 
     public void toggle(int id) throws Exception {
-        if (id == 1)
-            toDoList.setDone(!toDoList.isDone());
-        else
-            throw new Exception();
-    }
-
-    public void print(String id) throws Exception {
-        if (id.equals("all")) {
-            String toggle = "[ ]";
-            if (toDoList.isDone() == true) {
-                toggle = "[x]";
-            }
-            System.out.println(1 + ". " + toggle + " " + toDoList.getText().trim());
+        if (id == 1 && toggle.equals("[ ]")) {
+            toggle = "[x]";
+        } else if (id == 1 && toggle.equals("[x]")) {
+            toggle = "[ ]";
         } else {
             throw new Exception();
         }
+    }
+
+    public void print(String argument) throws Exception {
+        String printLine = 1 + ". " + toggle + " " + toDoList.getText().trim();
+        if (argument.equals("all") || (argument.equals("") && toggle.equals("[ ]"))) {
+            System.out.println(printLine);
+        } else if (!argument.equals("all") || !argument.equals("")) {
+            throw new Exception();
+        }
+    }
+
+    public String findArgument(String line, String command) {
+        String argument = "";
+        if (!line.equals(command)) {
+            argument = line.replace(command, "").trim();
+        }
+        return argument;
     }
 }
