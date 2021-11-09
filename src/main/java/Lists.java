@@ -1,8 +1,12 @@
+import ch.qos.logback.classic.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.ArrayList;
 
 public class Lists {
 
     private final ArrayList<Task> toDoList;
+    public static final Logger logger = (Logger) LoggerFactory.getLogger(Lists.class);
 
     public Lists(ArrayList<Task> toDoList) {
         this.toDoList = toDoList;
@@ -14,7 +18,11 @@ public class Lists {
     }
 
     public void toggle(int id) {
-        toDoList.get(id).setDone(!toDoList.get(id).isDone());
+        try {
+            toDoList.get(id).setDone(!toDoList.get(id).isDone());
+        } catch (Exception e) {
+            logger.error("Wrong argument " + id, e);
+        }
     }
 
     public void print(String id) {
