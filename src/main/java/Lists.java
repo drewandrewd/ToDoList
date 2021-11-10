@@ -5,16 +5,16 @@ import java.util.ArrayList;
 
 public class Lists {
 
-    private final ArrayList<Task> toDoList;
+    private final ArrayList<TaskText> toDoList;
     public static final Logger logger = (Logger) LoggerFactory.getLogger(Lists.class);
 
-    public Lists(ArrayList<Task> toDoList) {
+    public Lists(ArrayList<TaskText> toDoList) {
         this.toDoList = toDoList;
-        toDoList.add(new Task(""));
+        toDoList.add(new TaskText(""));
     }
 
     public void add(String toDo) {
-        toDoList.add(new Task(toDo));
+        toDoList.add(new TaskText(toDo));
     }
 
     public void toggle(int id) {
@@ -34,12 +34,12 @@ public class Lists {
             first = Integer.parseInt(id);
             last = first + 1;
         }
-        StringBuilder builder = new StringBuilder();
         for (int i = first; i < last; i++) {
+            StringBuilder builder = new StringBuilder();
             builder
                     .append(i)
                     .append(". ")
-                    .append(toDoList.get(i).getToggle())
+                    .append(toDoList.get(i).newToggle())
                     .append(" ")
                     .append(toDoList.get(i).getText().trim());
             System.out.println(builder);
@@ -51,7 +51,7 @@ public class Lists {
     }
 
     public void edit(int id, String toDo) {
-        toDoList.set(id, new Task(toDo));
+        toDoList.set(id, new TaskText(toDo));
     }
 
     public void search(String subString) {
