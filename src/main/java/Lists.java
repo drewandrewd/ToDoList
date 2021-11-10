@@ -26,8 +26,8 @@ public class Lists {
             first = Integer.parseInt(id);
             last = first + 1;
         }
-        StringBuilder builder = new StringBuilder();
         for (int i = first; i < last; i++) {
+            StringBuilder builder = new StringBuilder();
             builder
                     .append(i)
                     .append(". ")
