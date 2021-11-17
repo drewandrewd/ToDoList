@@ -6,7 +6,11 @@ import java.util.ArrayList;
 public class Lists {
 
     private final ArrayList<Task> toDoList;
-    public static final Logger logger = (Logger) LoggerFactory.getLogger(Lists.class);
+    private static Logger logger = (Logger) LoggerFactory.getLogger(Lists.class);
+
+    public static Logger getLogger() {
+        return logger;
+    }
 
     public Lists(ArrayList<Task> toDoList) {
         this.toDoList = toDoList;
@@ -17,12 +21,9 @@ public class Lists {
         toDoList.add(new Task(toDo));
     }
 
-    public void toggle(int id) {
-        try {
-            toDoList.get(id).setDone(!toDoList.get(id).isDone());
-        } catch (Exception e) {
-            logger.error("Wrong argument " + id, e);
-        }
+    public void toggle(int id)  {
+        toDoList.get(id).setDone(!toDoList.get(id).isDone());
+        Lists.getLogger().debug( "toggle " + id +  ": " + toDoList.get(id).isDone() + ": " + !toDoList.get(id).isDone());
     }
 
     public void print(String id) {
@@ -48,10 +49,12 @@ public class Lists {
 
     public void delete(int id) {
         toDoList.remove(id);
+        Lists.getLogger().debug( "remove " + id);
     }
 
     public void edit(int id, String toDo) {
         toDoList.set(id, new Task(toDo));
+        Lists.getLogger().debug( "edit " + id + " " + toDoList.get(id) + " : " + toDo);
     }
 
     public void search(String subString) {
