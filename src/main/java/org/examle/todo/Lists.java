@@ -1,17 +1,18 @@
+package org.examle.todo;
+
 import org.slf4j.LoggerFactory;
 import java.util.ArrayList;
 
 public class Lists {
 
-    private final ArrayList<Task> toDoList;
+    public static final ArrayList<Task> toDoList = new ArrayList<>();
     private static org.slf4j.Logger logger = LoggerFactory.getLogger(Lists.class);
 
     public static org.slf4j.Logger getLogger() {
         return logger;
     }
 
-    public Lists(ArrayList<Task> toDoList) {
-        this.toDoList = toDoList;
+    public Lists() {
         toDoList.add(new Task(""));
     }
 

@@ -1,3 +1,5 @@
+package org.examle.todo;
+
 public class Task {
 
     private String text;

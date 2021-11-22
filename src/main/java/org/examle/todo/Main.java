@@ -1,10 +1,17 @@
+package org.examle.todo;
+
+import org.examle.todo.Lists;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
+
+    public static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
-        Lists lists = new Lists(new ArrayList<>());
-        Scanner scanner = new Scanner(System.in);
+        Lists lists = new Lists();
+
         while (true) {
             try {
                 String command = scanner.next();
