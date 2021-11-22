@@ -1,7 +1,17 @@
-public abstract class Task {
+public class Task {
 
+    private String text;
     private boolean done;
     private String toggle;
+
+    public Task(String text) {
+        this.text = text;
+        this.done = false;
+    }
+
+    public String getText() {
+        return text;
+    }
 
     public boolean isDone() {
         return done;
@@ -11,13 +21,12 @@ public abstract class Task {
         this.done = done;
     }
 
-    public void setToggle(String toggle) {
-        this.toggle = toggle;
-    }
-
     public String getToggle() {
+        if (isDone() == true) {
+            toggle = "[x]";
+        } else {
+            toggle = "[ ]";
+        }
         return toggle;
     }
-
-    public abstract String newToggle();
 }
