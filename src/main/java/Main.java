@@ -11,36 +11,36 @@ public class Main {
                 if (command.equals("add")) {
                     String line = scanner.nextLine();
                     lists.add(line);
-                    Lists.logger.debug(command + " " + line);
+                    Lists.getLogger().debug(command + " " + line);
                 } else if (command.equals("print")) {
                     String id = scanner.next();
                     lists.print(id);
-                    Lists.logger.debug(command + " " + id);
+                    Lists.getLogger().debug(command + " " + id);
                 } else if (command.equals("toggle")) {
                     String id = scanner.next();
                     lists.toggle(Integer.parseInt(id));
-                    Lists.logger.debug(command + " " + id);
+                    Lists.getLogger().debug(command + " " + id);
                 } else if (command.equals("quit")) {
-                    Lists.logger.debug(command);
+                    Lists.getLogger().debug(command);
                     break;
                 } else if (command.equals("delete")) {
                     String id = scanner.next();
                     lists.delete(Integer.parseInt(id));
-                    Lists.logger.debug(command + " " + id);
+                    Lists.getLogger().debug(command + " " + id);
                 } else if (command.equals("edit")) {
                     String id = scanner.next();
                     String line = scanner.nextLine();
                     lists.edit(Integer.parseInt(id), line);
-                    Lists.logger.debug(command + " " + id + " " + line);
+                    Lists.getLogger().debug(command + " " + id + " " + line);
                 } else if (command.equals("search")) {
                     String line = scanner.nextLine();
                     lists.search(line);
-                    Lists.logger.debug(command + " " + line);
+                    Lists.getLogger().debug(command + " " + line);
                 } else {
-                    Lists.logger.error("Неправильная команнда!");
+                    Lists.getLogger().error("Неправильная команнда!");
                 }
             } catch (Exception e) {
-                Lists.logger.error("Ошибка ввода идентификатора!", e);
+                Lists.getLogger().error("Ошибка ввода идентификатора!", e);
             }
         }
     }

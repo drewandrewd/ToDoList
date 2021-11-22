@@ -1,28 +1,27 @@
-import ch.qos.logback.classic.Logger;
 import org.slf4j.LoggerFactory;
-
 import java.util.ArrayList;
 
 public class Lists {
 
-    private final ArrayList<TaskText> toDoList;
-    public static final Logger logger = (Logger) LoggerFactory.getLogger(Lists.class);
+    private final ArrayList<Task> toDoList;
+    private static org.slf4j.Logger logger = LoggerFactory.getLogger(Lists.class);
 
-    public Lists(ArrayList<TaskText> toDoList) {
+    public static org.slf4j.Logger getLogger() {
+        return logger;
+    }
+
+    public Lists(ArrayList<Task> toDoList) {
         this.toDoList = toDoList;
-        toDoList.add(new TaskText(""));
+        toDoList.add(new Task(""));
     }
 
     public void add(String toDo) {
-        toDoList.add(new TaskText(toDo));
+        toDoList.add(new Task(toDo));
     }
 
-    public void toggle(int id) {
-        try {
-            toDoList.get(id).setDone(!toDoList.get(id).isDone());
-        } catch (Exception e) {
-            logger.error("Wrong argument " + id, e);
-        }
+    public void toggle(int id)  {
+        toDoList.get(id).setDone(!toDoList.get(id).isDone());
+        logger.debug( "toggle " + id +  ": " + toDoList.get(id).isDone() + ": " + !toDoList.get(id).isDone());
     }
 
     public void print(String id) {
@@ -39,7 +38,7 @@ public class Lists {
             builder
                     .append(i)
                     .append(". ")
-                    .append(toDoList.get(i).newToggle())
+                    .append(toDoList.get(i).getToggle())
                     .append(" ")
                     .append(toDoList.get(i).getText().trim());
             System.out.println(builder);
@@ -48,14 +47,17 @@ public class Lists {
 
     public void delete(int id) {
         toDoList.remove(id);
+        logger.debug( "remove " + id);
     }
 
     public void edit(int id, String toDo) {
-        toDoList.set(id, new TaskText(toDo));
+        toDoList.set(id, new Task(toDo));
+        logger.debug( "edit {} {} : {}" , id, toDoList.get(id), toDo);
     }
 
     public void search(String subString) {
         ArrayList<String> indexes = new ArrayList<>();
+        logger.debug( "search: {}" , subString);
         for (int i = 0; i < toDoList.size(); i++) {
             if (toDoList.get(i).getText().contains(subString.trim())) {
                 indexes.add((i) + "");
