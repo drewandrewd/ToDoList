@@ -4,8 +4,6 @@ import org.examle.todo.Lists;
 import org.examle.todo.Main;
 import org.examle.todo.Task;
 
-import java.util.Scanner;
-
 public class AddCommand extends CommandMain {
 
     @Override

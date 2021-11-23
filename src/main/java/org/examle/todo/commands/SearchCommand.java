@@ -1,12 +1,9 @@
 package org.examle.todo.commands;
 
-import ch.qos.logback.classic.Logger;
 import org.examle.todo.Lists;
 import org.examle.todo.Main;
-import org.examle.todo.Task;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class SearchCommand extends CommandMain {
 

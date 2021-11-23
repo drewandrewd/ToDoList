@@ -2,9 +2,6 @@ package org.examle.todo.commands;
 
 import org.examle.todo.Lists;
 import org.examle.todo.Main;
-import org.examle.todo.Task;
-
-import java.util.Scanner;
 
 public class PrintCommand extends CommandMain {
 
@@ -23,7 +20,6 @@ public class PrintCommand extends CommandMain {
     public void setIndex(String index) {
         this.index = index;
     }
-
 
     @Override
     public void process() {

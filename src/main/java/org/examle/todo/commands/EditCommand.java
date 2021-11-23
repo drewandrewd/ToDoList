@@ -4,8 +4,6 @@ import org.examle.todo.Lists;
 import org.examle.todo.Main;
 import org.examle.todo.Task;
 
-import java.util.Scanner;
-
 public class EditCommand extends CommandMain{
     @Override
     public String getCommandName() {

@@ -2,7 +2,6 @@ package org.examle.todo.commands;
 
 import org.examle.todo.Lists;
 import org.examle.todo.Main;
-import org.examle.todo.Task;
 
 public class ToggleCommand extends CommandMain {
     @Override
