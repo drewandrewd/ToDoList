@@ -3,7 +3,7 @@ package org.examle.todo.commands;
 import org.examle.todo.Lists;
 import org.examle.todo.Main;
 
-public class PrintCommand implements CommandMain {
+public class PrintCommand extends BaseCommand {
 
     private String index;
 
@@ -22,7 +22,7 @@ public class PrintCommand implements CommandMain {
     }
 
     @Override
-    public void process() {
+    public void run() {
         String id = "";
         if (index == null)
             id = findId();

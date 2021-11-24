@@ -4,7 +4,7 @@ import org.examle.todo.Lists;
 import org.examle.todo.Main;
 import org.examle.todo.Task;
 
-public class AddCommand implements CommandMain {
+public class AddCommand extends BaseCommand {
 
     @Override
     public String getCommandName() {
@@ -17,7 +17,7 @@ public class AddCommand implements CommandMain {
     }
 
     @Override
-    public void process() {
+    public void run() {
         String line = findId();
         Lists.getLogger().debug(getCommandName() + " " + line);
         Lists.toDoList.add(new Task(line));

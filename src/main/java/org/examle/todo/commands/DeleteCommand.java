@@ -3,7 +3,7 @@ package org.examle.todo.commands;
 import org.examle.todo.Lists;
 import org.examle.todo.Main;
 
-public class DeleteCommand implements CommandMain{
+public class DeleteCommand extends BaseCommand{
 
     @Override
     public String getCommandName() {
@@ -16,7 +16,7 @@ public class DeleteCommand implements CommandMain{
     }
 
     @Override
-    public void process() {
+    public void run() {
         int id = Integer.parseInt(findId());
         Lists.toDoList.remove(id);
         Lists.getLogger().debug( "remove " + id);

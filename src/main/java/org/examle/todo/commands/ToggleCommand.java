@@ -3,7 +3,7 @@ package org.examle.todo.commands;
 import org.examle.todo.Lists;
 import org.examle.todo.Main;
 
-public class ToggleCommand implements CommandMain {
+public class ToggleCommand extends BaseCommand {
     @Override
     public String getCommandName() {
         return "toggle";
@@ -15,7 +15,7 @@ public class ToggleCommand implements CommandMain {
     }
 
     @Override
-    public void process() {
+    public void run() {
         int id = Integer.parseInt(findId());
         Lists.toDoList.get(id).setDone(!Lists.toDoList.get(id).isDone());
         Lists.getLogger().debug( "toggle " + id +  ": " + Lists.toDoList.get(id).isDone() + ": " + !Lists.toDoList.get(id).isDone());
