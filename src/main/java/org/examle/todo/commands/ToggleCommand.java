@@ -3,7 +3,7 @@ package org.examle.todo.commands;
 import org.examle.todo.Lists;
 import org.examle.todo.Main;
 
-public class ToggleCommand extends CommandMain {
+public class ToggleCommand implements CommandMain {
     @Override
     public String getCommandName() {
         return "toggle";

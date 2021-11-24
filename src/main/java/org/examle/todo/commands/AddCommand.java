@@ -4,7 +4,7 @@ import org.examle.todo.Lists;
 import org.examle.todo.Main;
 import org.examle.todo.Task;
 
-public class AddCommand extends CommandMain {
+public class AddCommand implements CommandMain {
 
     @Override
     public String getCommandName() {

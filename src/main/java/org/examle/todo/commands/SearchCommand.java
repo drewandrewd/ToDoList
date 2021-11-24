@@ -5,7 +5,7 @@ import org.examle.todo.Main;
 
 import java.util.ArrayList;
 
-public class SearchCommand extends CommandMain {
+public class SearchCommand implements CommandMain {
 
     @Override
     public String getCommandName() {

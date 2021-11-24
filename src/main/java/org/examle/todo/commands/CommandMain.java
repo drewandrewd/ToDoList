@@ -1,7 +1,7 @@
 package org.examle.todo.commands;
 
-public abstract class CommandMain {
-    public abstract String getCommandName();
-    public abstract String findId();
-    public abstract void process();
+public interface CommandMain {
+    public String getCommandName();
+    String findId();
+    public void process();
 }

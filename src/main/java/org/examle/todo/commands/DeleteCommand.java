@@ -3,7 +3,7 @@ package org.examle.todo.commands;
 import org.examle.todo.Lists;
 import org.examle.todo.Main;
 
-public class DeleteCommand extends CommandMain{
+public class DeleteCommand implements CommandMain{
 
     @Override
     public String getCommandName() {

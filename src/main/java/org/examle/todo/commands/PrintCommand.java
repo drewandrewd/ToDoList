@@ -3,7 +3,7 @@ package org.examle.todo.commands;
 import org.examle.todo.Lists;
 import org.examle.todo.Main;
 
-public class PrintCommand extends CommandMain {
+public class PrintCommand implements CommandMain {
 
     private String index;
 
