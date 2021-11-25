@@ -1,0 +1,27 @@
+17:36:39.178 [main] ERROR org.examle.todo.Lists - Ошибка ввода идентификатора!
+java.lang.NumberFormatException: For input string: " 1"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:68)
+	at java.base/java.lang.Integer.parseInt(Integer.java:638)
+	at java.base/java.lang.Integer.parseInt(Integer.java:770)
+	at org.examle.todo.commands.ToggleCommand.run(ToggleCommand.java:19)
+	at org.examle.todo.commands.BaseCommand.process(BaseCommand.java:10)
+	at org.examle.todo.commands.CommandParser.parser(CommandParser.java:18)
+	at org.examle.todo.Main.main(Main.java:17)
+17:37:15.126 [main] ERROR org.examle.todo.Lists - Ошибка ввода идентификатора!
+java.lang.NumberFormatException: For input string: " 2"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:68)
+	at java.base/java.lang.Integer.parseInt(Integer.java:638)
+	at java.base/java.lang.Integer.parseInt(Integer.java:770)
+	at org.examle.todo.commands.ToggleCommand.run(ToggleCommand.java:19)
+	at org.examle.todo.commands.BaseCommand.process(BaseCommand.java:10)
+	at org.examle.todo.commands.CommandParser.parser(CommandParser.java:18)
+	at org.examle.todo.Main.main(Main.java:17)
+17:40:39.768 [main] ERROR org.examle.todo.Lists - Ошибка ввода идентификатора!
+java.lang.NumberFormatException: For input string: " 1"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:68)
+	at java.base/java.lang.Integer.parseInt(Integer.java:638)
+	at java.base/java.lang.Integer.parseInt(Integer.java:770)
+	at org.examle.todo.commands.ToggleCommand.run(ToggleCommand.java:19)
+	at org.examle.todo.commands.BaseCommand.process(BaseCommand.java:10)
+	at org.examle.todo.commands.CommandParser.parser(CommandParser.java:18)
+	at org.examle.todo.Main.main(Main.java:17)

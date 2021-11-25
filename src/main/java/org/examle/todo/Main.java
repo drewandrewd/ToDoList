@@ -10,27 +10,29 @@ public class Main {
 
     public static void main(String[] args) {
         Lists lists = Lists.getInstance();
+        CommandParser commandParser = CommandParser.getInstance();
         while (true) {
             try {
                 String command = scanner.next();
-                if (command.equals("add")) {
-                    new AddCommand().process();
-                } else if (command.equals("print")) {
-                    new PrintCommand().process();
-                } else if (command.equals("toggle")) {
-                    new ToggleCommand().process();
-                } else if (command.equals("quit")) {
-                    Lists.getLogger().debug(command);
-                    break;
-                } else if (command.equals("delete")) {
-                    new DeleteCommand().process();
-                } else if (command.equals("edit")) {
-                    new EditCommand().process();
-                } else if (command.equals("search")) {
-                    new SearchCommand().process();
-                } else {
-                    Lists.getLogger().error("Неправильная команнда: " + command);
-                }
+                commandParser.parser(command);
+//                if (command.equals("add")) {
+//                    new AddCommand().process();
+//                } else if (command.equals("print")) {
+//                    new PrintCommand().process();
+//                } else if (command.equals("toggle")) {
+//                    new ToggleCommand().process();
+//                } else if (command.equals("quit")) {
+//                    Lists.getLogger().debug(command);
+//                    break;
+//                } else if (command.equals("delete")) {
+//                    new DeleteCommand().process();
+//                } else if (command.equals("edit")) {
+//                    new EditCommand().process();
+//                } else if (command.equals("search")) {
+//                    new SearchCommand().process();
+//                } else {
+//                    Lists.getLogger().error("Неправильная команнда: " + command);
+//                }
             } catch (Exception e) {
                 Lists.getLogger().error("Ошибка ввода идентификатора!", e);
             }

@@ -11,7 +11,7 @@ public class ToggleCommand extends BaseCommand {
 
     @Override
     public String findId() {
-        return Main.scanner.nextLine();
+        return Main.scanner.nextLine().trim();
     }
 
     @Override
