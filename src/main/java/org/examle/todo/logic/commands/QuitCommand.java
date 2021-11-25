@@ -1,19 +1,21 @@
-package org.examle.todo.commands;
+package org.examle.todo.logic.commands;
+
+import org.examle.todo.logic.BaseCommand;
 
 public class QuitCommand extends BaseCommand {
 
     @Override
-    String getCommandName() {
+    public String getCommandName() {
         return "quit";
     }
 
     @Override
-    String findId() {
+    public String findId() {
         return null;
     }
 
     @Override
-    void run() {
+    public void run() {
         System.exit(0);
     }
 }

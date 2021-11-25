@@ -1,4 +1,7 @@
-package org.examle.todo.commands;
+package org.examle.todo.core;
+
+import org.examle.todo.logic.BaseCommand;
+import org.examle.todo.logic.commands.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;

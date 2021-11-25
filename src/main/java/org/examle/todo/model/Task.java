@@ -1,4 +1,4 @@
-package org.examle.todo;
+package org.examle.todo.model;
 
 public class Task {
 

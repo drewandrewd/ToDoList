@@ -1,8 +1,9 @@
-package org.examle.todo.commands;
+package org.examle.todo.logic.commands;
 
-import org.examle.todo.Lists;
+import org.examle.todo.model.Lists;
 import org.examle.todo.Main;
-import org.examle.todo.Task;
+import org.examle.todo.logic.BaseCommand;
+import org.examle.todo.model.Task;
 
 public class AddCommand extends BaseCommand {
 

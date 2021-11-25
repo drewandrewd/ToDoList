@@ -1,4 +1,4 @@
-package org.examle.todo.commands;
+package org.examle.todo.logic;
 
 public interface CommandMain {
     void process(String line);
