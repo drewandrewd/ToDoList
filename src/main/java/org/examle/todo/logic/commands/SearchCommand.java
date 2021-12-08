@@ -1,11 +1,12 @@
-package org.examle.todo.commands;
+package org.examle.todo.logic.commands;
 
-import org.examle.todo.Lists;
+import org.examle.todo.model.Lists;
 import org.examle.todo.Main;
+import org.examle.todo.logic.BaseCommand;
 
 import java.util.ArrayList;
 
-public class SearchCommand implements CommandMain {
+public class SearchCommand extends BaseCommand {
 
     @Override
     public String getCommandName() {
@@ -18,7 +19,7 @@ public class SearchCommand implements CommandMain {
     }
 
     @Override
-    public void process() {
+    public void run() {
         String line = findId();
         ArrayList<String> indexes = new ArrayList<>();
 
@@ -30,7 +31,7 @@ public class SearchCommand implements CommandMain {
         for (String index : indexes) {
             PrintCommand curr = new PrintCommand();
             curr.setIndex(index);
-            curr.process();
+            curr.run();
         }
         Lists.getLogger().debug( "search: {}" , findId());
     }

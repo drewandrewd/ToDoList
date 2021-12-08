@@ -1,9 +1,10 @@
-package org.examle.todo.commands;
+package org.examle.todo.logic.commands;
 
-import org.examle.todo.Lists;
+import org.examle.todo.model.Lists;
 import org.examle.todo.Main;
+import org.examle.todo.logic.BaseCommand;
 
-public class PrintCommand implements CommandMain {
+public class PrintCommand extends BaseCommand {
 
     private String index;
 
@@ -22,13 +23,13 @@ public class PrintCommand implements CommandMain {
     }
 
     @Override
-    public void process() {
+    public void run() {
         String id = "";
         if (index == null)
             id = findId();
         else
             id = index;
-        Lists.getLogger().debug(getCommandName() + " " + id);
+        Lists.getLogger().debug("{} {}", getCommandName(), id);
         int first = 1;
         int last = 0;
         if (id.equals("all")) {

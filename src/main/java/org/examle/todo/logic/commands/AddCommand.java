@@ -1,10 +1,11 @@
-package org.examle.todo.commands;
+package org.examle.todo.logic.commands;
 
-import org.examle.todo.Lists;
+import org.examle.todo.model.Lists;
 import org.examle.todo.Main;
-import org.examle.todo.Task;
+import org.examle.todo.logic.BaseCommand;
+import org.examle.todo.model.Task;
 
-public class AddCommand implements CommandMain {
+public class AddCommand extends BaseCommand {
 
     @Override
     public String getCommandName() {
@@ -17,9 +18,9 @@ public class AddCommand implements CommandMain {
     }
 
     @Override
-    public void process() {
+    public void run() {
         String line = findId();
-        Lists.getLogger().debug(getCommandName() + " " + line);
+        Lists.getLogger().debug("{} {}", getCommandName(), line);
         Lists.toDoList.add(new Task(line));
     }
 }

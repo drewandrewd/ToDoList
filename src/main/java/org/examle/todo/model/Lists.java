@@ -1,4 +1,4 @@
-package org.examle.todo;
+package org.examle.todo.model;
 
 import org.slf4j.LoggerFactory;
 import java.util.ArrayList;
