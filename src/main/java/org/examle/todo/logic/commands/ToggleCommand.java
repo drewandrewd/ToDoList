@@ -19,6 +19,6 @@ public class ToggleCommand extends BaseCommand {
     public void run() {
         int id = Integer.parseInt(findId());
         Lists.toDoList.get(id).setDone(!Lists.toDoList.get(id).isDone());
-        Lists.getLogger().debug( "toggle " + id +  ": " + Lists.toDoList.get(id).isDone() + ": " + !Lists.toDoList.get(id).isDone());
+        Lists.getLogger().debug( "toggle {}: {}: {}", id, Lists.toDoList.get(id).isDone(), !Lists.toDoList.get(id).isDone());
     }
 }

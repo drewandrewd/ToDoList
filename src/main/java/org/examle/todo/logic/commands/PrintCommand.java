@@ -29,7 +29,7 @@ public class PrintCommand extends BaseCommand {
             id = findId();
         else
             id = index;
-        Lists.getLogger().debug(getCommandName() + " " + id);
+        Lists.getLogger().debug("{} {}", getCommandName(), id);
         int first = 1;
         int last = 0;
         if (id.equals("all")) {

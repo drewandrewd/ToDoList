@@ -20,6 +20,6 @@ public class DeleteCommand extends BaseCommand {
     public void run() {
         int id = Integer.parseInt(findId());
         Lists.toDoList.remove(id);
-        Lists.getLogger().debug( "remove " + id);
+        Lists.getLogger().debug( "remove {}", id);
     }
 }

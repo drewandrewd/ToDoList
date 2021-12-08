@@ -20,7 +20,7 @@ public class AddCommand extends BaseCommand {
     @Override
     public void run() {
         String line = findId();
-        Lists.getLogger().debug(getCommandName() + " " + line);
+        Lists.getLogger().debug("{} {}", getCommandName(), line);
         Lists.toDoList.add(new Task(line));
     }
 }
