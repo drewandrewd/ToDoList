@@ -22,7 +22,7 @@ public class EditCommand extends BaseCommand {
 
     @Override
     public void run() {
-        int id = Integer.parseInt(findId());
+        int id = Integer.parseInt(findId()) - 1;
         String line = getLine();
         Lists.toDoList.set(id, new Task(line));
         Lists.getLogger().debug( "edit {} {} : {}" , id, Lists.toDoList.get(id), line);

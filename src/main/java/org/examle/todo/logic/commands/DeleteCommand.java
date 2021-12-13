@@ -18,7 +18,7 @@ public class DeleteCommand extends BaseCommand {
 
     @Override
     public void run() {
-        int id = Integer.parseInt(findId());
+        int id = Integer.parseInt(findId()) - 1;
         Lists.toDoList.remove(id);
         Lists.getLogger().debug( "remove {}", id);
     }

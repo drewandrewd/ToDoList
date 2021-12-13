@@ -25,7 +25,7 @@ public class SearchCommand extends BaseCommand {
 
         for (int i = 0; i < Lists.toDoList.size(); i++) {
             if (Lists.toDoList.get(i).getText().contains(line.trim())) {
-                indexes.add((i) + "");
+                indexes.add((i - 1) + "");
             }
         }
         for (String index : indexes) {

@@ -33,7 +33,7 @@ public class PrintCommand extends BaseCommand {
         int first = 1;
         int last = 0;
         if (id.equals("all")) {
-            last = Lists.toDoList.size();
+            last = Lists.toDoList.size() + 1;
         } else {
             first = Integer.parseInt(id);
             last = first + 1;
@@ -43,9 +43,9 @@ public class PrintCommand extends BaseCommand {
             builder
                     .append(i)
                     .append(". ")
-                    .append(Lists.toDoList.get(i).getToggle())
+                    .append(Lists.toDoList.get(i - 1).getToggle())
                     .append(" ")
-                    .append(Lists.toDoList.get(i).getText().trim());
+                    .append(Lists.toDoList.get(i - 1).getText().trim());
             System.out.println(builder);
         }
     }
