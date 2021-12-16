@@ -1,11 +1,12 @@
 package org.examle.todo.model;
 
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 
-@Service
+@Component
 public class Lists {
 
     public static final ArrayList<Task> toDoList = new ArrayList<>();
