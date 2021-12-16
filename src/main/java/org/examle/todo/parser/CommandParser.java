@@ -3,19 +3,14 @@ package org.examle.todo.parser;
 import org.examle.todo.logic.BaseCommand;
 import org.examle.todo.core.CommandFactory;
 import org.examle.todo.model.Lists;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 
+@Service
 public class CommandParser {
 
     private final ArrayList<BaseCommand> commands = CommandFactory.getCommands();
-    private static CommandParser instance;
-
-    public static CommandParser getInstance() {
-        if (instance == null)
-            instance = new CommandParser();
-        return instance;
-    }
 
     public void parser(String line) {
         if (check(line)) {
